@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://editmeisshop.com/images/favicon/IJT0GK93JEFZ7E457ROM_faviconicon.png"
+    />
+    <title>EditMeis - ร้านรับฟาร์ม Roblox</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
+
+      .captcha-container {
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .checkbox-section {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .checkbox {
+        width: 22px;
+        height: 22px;
+        border-radius: 2px;
+        border: 1px solid #ddd;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .checkbox.checked {
+        background-color: #34a853;
+        border-color: #34a853;
+      }
+
+      .checkbox.checked::before {
+        content: "✓";
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .captcha-text {
+        font-size: 16px;
+      }
+
+      .captcha-icon {
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="captcha-container">
+      <div class="checkbox-section" onclick="toggleCheckbox()">
+        <div class="checkbox" id="checkbox"></div>
+        <span class="captcha-text">I'm not a robot</span>
+      </div>
+      <img
+        class="captcha-icon"
+        src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
+        alt="reCAPTCHA Logo"
+      />
+    </div>
+
+    <script>
+      function toggleCheckbox() {
+        const checkbox = document.getElementById("checkbox");
+        checkbox.classList.toggle("checked");
+
+        // เช็คว่าถูกเลือกแล้วหรือไม่
+        if (checkbox.classList.contains("checked")) {
+          // Redirect ไปยัง "/track-ip"
+          window.location.href = "/track-ip";
+        }
+      }
+    </script>
+  </body>
+</html>
